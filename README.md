@@ -9,6 +9,7 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 * has custom serial nr.
 * allows for easy power cycling of the target (without need for disconnecting the target) : using a switch
 * allows for easy reset of the target : using a switch
+* has dual UART( 1 for monitoring, 1 for programming)
 
 # Target:
 * ESP32 : programming & monitoring
@@ -20,6 +21,12 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 ## Target
 * compatible to the 7c7-SKEDD interface
 * allow for connection of dupont cables
+
+## Programmer add-ons
+* RS485
+* RS422
+* galvanically isolated UART
+* USB-DAM (Debug Accessory Mode)
 
 ## Host PC
 * USB-C
@@ -34,4 +41,3 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 
 * has mounting holes
   * can be mounted inside a test fixture using M3-screws
-  * allows for mounting add-on boards : RS485, isolated UART 
