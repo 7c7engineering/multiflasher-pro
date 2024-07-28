@@ -19,6 +19,7 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 # Use cases:
 * ESP32 : programming & monitoring (RTS/DTR needed for programming)
 * AVR : UPDI programming
+* Raspberry Pi Pico SWD + UART : programming & monitoring
 * Raspberry Pi UART : monitoring (pin functions clearly indicated)
 * Expansion port for add-on : RS485, RS422, galvanically isolated UART
 
