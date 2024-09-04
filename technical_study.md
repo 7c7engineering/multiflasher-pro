@@ -15,3 +15,7 @@
 
 # UPDI programming connection
 * [Atmel megaAVR](https://docs.platformio.org/en/stable/platforms/atmelmegaavr.html)
+
+# RP2040 Hardware flow control : DTR
+* [rp2040-pio-uart-bridge ](https://github.com/GrechTech/rp2040-pio-uart-bridge/tree/main) : reacts on cdc_line_state call back
+* RP2040 datasheet : UARTCR register, DTR and RTS bits : will only work (if it works) for the UART0 peripheral, not for the PIO UART
