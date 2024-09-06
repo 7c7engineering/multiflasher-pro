@@ -4,6 +4,11 @@
   * good driver support
   * internal 3V3 LDO, internal crystal, minimal external components needed.
   * using as UPDI programming software for Atmel AVR
+  * single UART
+* CP2105
+  * 2 UARTs
+  * DTR output
+  * LCSC C109102 (€1.83)
 
 # Target power
 * [Limiting In-rush Current in MOSFET Power Switches](http://www.mosaic-industries.com/embedded-systems/microcontroller-projects/electronic-circuits/push-button-switch-turn-on/inrush-current-limited-mosfet)
