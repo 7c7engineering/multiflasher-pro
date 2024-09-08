@@ -9,6 +9,11 @@
   * 2 UARTs
   * DTR output
   * LCSC C109102 (€1.83)
+* RP2040
+  * 2 UARTs
+  * DTR output
+  * LCSC C109102 (€1.83)
+  * I²C for configuration of USB-PD sink
 
 # Target power
 * [Limiting In-rush Current in MOSFET Power Switches](http://www.mosaic-industries.com/embedded-systems/microcontroller-projects/electronic-circuits/push-button-switch-turn-on/inrush-current-limited-mosfet)

@@ -2,7 +2,7 @@
 Programmer for ESP32, AVR-UPDI &amp; UART-monitor
 
 To get around the limitations of the current ITL211205 multiflasher, an upgrade is proposed which:
-* is easy and quick to solder :
+* is easy and quick to solder (or can be assembled by JLCPCB):
   * (no QFN or pitch >0.5mm)
   * (no 0402 or smaller)
 * is reliable
@@ -18,21 +18,23 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 
 # Use cases:
 * ESP32 : programming & monitoring (RTS/DTR needed for programming)
-* AVR : UPDI programming
+* AVR : UPDI programming using pyupdi
 * Raspberry Pi Pico SWD + UART : programming & monitoring
 * Raspberry Pi UART : monitoring (pin functions clearly indicated)
 * Expansion port for add-on : RS485, RS422, galvanically isolated UART
 
 # Connectivity:
 ## Programming port
-* compatible to the 7c7-SKEDD interface
-* allow for connection of dupont cables
+* RA IDC-connector
+    * allows for connection of dupont cables
+* compatible to the 7c7-SKEDD interface : 
+    * First 6 or last 6 pins should be the same as the 7c7-SKEDD interface, so that a 6-pin ribbon cable can be used to connect to the target
 * RXD, TXD, RTS, DTR
 * Add-on:
   * USB-DAM (Debug Accessory Mode)
 
 ## Logging port
-* Full UART (RXD, TXD, RTS, CTS, DTR, DSR, DCD, RI)
+* almost full UART (RXD, TXD, RTS, CTS, DTR)
 * allow for connection of dupont cables
 * Add-on
   * RS485
@@ -47,7 +49,14 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 * USB-C
 
 # Target power
+* Separate Wire-to-Board connector for power
+  * polarity protected
+  * polarity clearly indicated
 * USB-PD sink (5V, 9V, 12V, 15V, 20V)
+  * 5V is always available
+  * 9V, 12V, 15V, 20V are only available when the host PC supports it
+  * rotary switch to select the voltage
+  * status LEDs to indicate what is the current voltage
 * allows to power the target ON/OFF using a switch
 * has status LEDs to indicate what is the current power supply voltage
 * back feeding protection (to avoid damage to the USB port of the host PC)
