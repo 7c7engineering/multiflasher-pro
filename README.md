@@ -36,7 +36,7 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 ## Logging port
 * almost full UART (RXD, TXD, RTS, CTS, DTR)
 * allow for connection of dupont cables
-* Add-on
+* Add-on (through expansion port): either BTB-connector or test points and SMD-spring loaded pins on the add-on board
   * RS485
   * RS422
   * galvanically isolated UART
@@ -49,7 +49,8 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 * USB-C
 
 # Target power
-* Separate Wire-to-Board connector for power
+* High-side current monitoring
+* Separate Wire-to-Board connector for power (JST-XH, -EH, -PH)
   * polarity protected
   * polarity clearly indicated
 * USB-PD sink (5V, 9V, 12V, 15V, 20V)
