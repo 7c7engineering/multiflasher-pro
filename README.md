@@ -12,6 +12,7 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 * allows for easy power cycling of the target (without need for disconnecting the target)
 * allows for easy reset of the target : using a switch
 * has dual UART( 1 for monitoring, 1 for programming)
+  * [Single UART solution](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Ftechstudio-design%2FtinyUPDI)
 
 # Nice to have
 * has custom serial nr.
