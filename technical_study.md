@@ -1,23 +1,27 @@
 # Interface to the PC:
-* FT230X (€2.05) → doesn’t have DTR output
-* FT231XS-R
+* ~~FT230X (€2.05)~~ → doesn’t have DTR output
+* ~~FT231XS-R~~ → single UART
   * good driver support
   * internal 3V3 LDO, internal crystal, minimal external components needed.
   * using as UPDI programming software for Atmel AVR
   * single UART
-* CP2105 (doesn't allow for extra features such as USB-PD sink)
+* CP2105
   * 2 UARTs
   * DTR output
   * LCSC C109102 (€1.83)
+  * USB-PD sink configuration would have to be done over strapping pins, not over I²C (because there's no I²C master).  The [CYPD3177-24LQXQ](https://jlcpcb.com/partdetail/3345638-CYPD317724LQXQ/C2959321) could be used. 
+  * option for 3V3 self powered operation
+  * no support for SWD programming
 * RP2040
   * 2 UARTs
   * DTR output
   * LCSC C109102 (€1.83)
   * I²C for configuration of USB-PD sink
+  * requires programming
 
 # Target power
 * [Limiting In-rush Current in MOSFET Power Switches](http://www.mosaic-industries.com/embedded-systems/microcontroller-projects/electronic-circuits/push-button-switch-turn-on/inrush-current-limited-mosfet), might use LM73100 instead.
-* An extra diode is needed to prevent the switch from being opened by the target sourcing current back into the programmer.
+* An extra diode is needed to prevent the switch from being opened by the target, sourcing current back into the programmer.
 * The target power voltage value is fixed, as it will be almost in all cases be used to power an LDO on the target.  Anyway, a target should be able to cope with 5V being provided on the target port, because that's also a valid voltage for the previous ITL211205.  A wrong switch setting there would also kill your target.
 
 # ESP Programming connection
@@ -40,9 +44,11 @@
 * Single bit : SN74AXC1T45QDCKRQ1
 
 # USB-PD sink
-* STUSB4500 : C2678061 : more popular on JLCPCB 
+* [CYPD3177-24LQXQ](https://jlcpcb.com/partdetail/3345638-CYPD317724LQXQ/C2959321) : no programming needed.  Voltage can be set by resistors.  I²C interface for monitoring.
+* STUSB4500 : C2678061 : more popular on JLCPCB, I²C interface for monitoring
   * [Hackaday](https://hackaday.com/2021/04/21/easy-usb%E2%80%91c-power-for-all-your-devices/)
-* FUSB302 : LCSC C442699
+* FUSB302 : LCSC C442699, I²C interface for monitoring
+  * [Hackaday](https://hackaday.io/project/176680-pd-micro-usb-c-pd30-pps-trigger)
 
 # Power meter
 Two pin compatible options:
@@ -51,6 +57,11 @@ Two pin compatible options:
 
 # Add-on port
 * Bottom entry header female header on the programmer board, so that single side PCBs can be used for both the programmer and the add-on board.
+
+# LEDs
+* RX and TX toggle
+* DUT Power
+* Programmer power
 
 # O-LED display
 * [0.91" OLED Display 128x32 pixels Blue - I2C](https://www.tinytronics.nl/en/displays/oled/0.91-inch-oled-display-128*32-pixels-blue-i2c)

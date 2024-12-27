@@ -34,6 +34,9 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
 * Add-on:
   * USB-DAM (Debug Accessory Mode)
 
+## Debugging port
+* SWD
+
 ## Logging port
 * almost full UART (RXD, TXD, RTS, CTS, DTR)
 * allow for connection of dupont cables
