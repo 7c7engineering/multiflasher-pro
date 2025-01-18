@@ -21,7 +21,7 @@
 
 # Target power
 * [Limiting In-rush Current in MOSFET Power Switches](http://www.mosaic-industries.com/embedded-systems/microcontroller-projects/electronic-circuits/push-button-switch-turn-on/inrush-current-limited-mosfet), might use LM73100 instead.
-* An extra diode is needed to prevent the switch from being opened by the target, sourcing current back into the programmer.
+* LM73100 provides power to the target (in-rush current limited and back powered protection)
 * The target power voltage value is fixed, as it will be almost in all cases be used to power an LDO on the target.  Anyway, a target should be able to cope with 5V being provided on the target port, because that's also a valid voltage for the previous ITL211205.  A wrong switch setting there would also kill your target.
 
 # ESP Programming connection
@@ -37,11 +37,12 @@
 # Bus transceiver (dual voltage)
 * Secondary side voltage, 3.3V or 5V, is set by the programmer.
 * Digikey : Buffers, Drivers, Receivers, Transceivers : 4, 8, 10 bits
-* Digikey : Translators, Level Shifters : 
+* Digikey : Translators, Level Shifters : single bit
   * SN74LVC1T45DCKR : JLCPCB C9382
   * SN74LVC1T45QDCKRQ1
   * SN74LVC1T45DCKT
 * Single bit : SN74AXC1T45QDCKRQ1
+* 4bit (direction selection for each bit separately), but not 5V tolerant : SN74AVC4T774PWR
 
 # USB-PD sink
 * [CYPD3177-24LQXQ](https://jlcpcb.com/partdetail/3345638-CYPD317724LQXQ/C2959321) : no programming needed.  Voltage can be set by resistors.  I²C interface for monitoring.

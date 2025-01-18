@@ -46,6 +46,7 @@ To get around the limitations of the current ITL211205 multiflasher, an upgrade 
   * galvanically isolated UART
 
 ## IO-Voltage
+The target outputs its IO-voltage on the programming port, so that the programmer can adapt its IO-voltage to the target's IO-voltage.
 * 3.3V
 * 5V
 
